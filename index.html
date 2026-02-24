@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-base-200">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
     }
   </style>
 </head>
-<body class="bg-base-200">
+<body>
   <header>
     <div class="">
       <div class="navbar w-10/12 mx-auto pt-14">
@@ -50,7 +50,7 @@
   <main class="w-10/12 mx-auto pt-3">
     <div class="flex justify-between py-6">
       <h1 class="text-[#002C5C] text-xl font-semibold">Available Jobs</h1>
-      <p class="text-[16px] text-gray-500">8 jobs</p>
+      <p class="text-[16px] text-gray-500"><span id="job-count">8</span> jobs</p>
     </div>
     <div class="buttons">
       <button onclick="toggleStyle('all-btn')" id="all-btn" class="btn bg-[#3B82F6] text-white mr-2">All</button>
@@ -288,7 +288,7 @@ Full-time
         </div>
       </div>
       <!-- card 8 -->
-      <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
+       <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
         <div class="space-y-4">
           <!-- part 1 -->
@@ -321,5 +321,7 @@ Full-time
       </div>
     </section>
   </main>
+  <script src="script.js"></script>
+  <script src="function.js"></script>
 </body>
 </html>
