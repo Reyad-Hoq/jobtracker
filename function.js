@@ -17,4 +17,18 @@ function toggleStyle (id) {
   rejecting.classList.remove("bg-white","bg-[#3B82F6]","text-white");
 // then adding button class to clicked button 
   selected.classList.add("bg-[#3B82F6]", "text-white");
+
+  if (id === 'interview-btn') {
+    allcards.classList.add('hidden');
+    filteredRejected.classList.add('hidden')
+    filteredInterview.classList.remove('hidden')
+  } else if (id === 'all-btn') {
+    filteredInterview.classList.add('hidden');
+    filteredRejected.classList.add('hidden')
+    allcards.classList.remove('hidden');
+  } else if (id === 'reject-btn') {
+    filteredInterview.classList.add('hidden');
+    allcards.classList.add('hidden')
+    filteredRejected.classList.remove('hidden');
+  }
 }

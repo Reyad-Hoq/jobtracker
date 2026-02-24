@@ -9,3 +9,5 @@ const rejectedCount = document.getElementById("rejected-count");
 
 const allcards = document.getElementById("allcards");
 const mainContainer = document.querySelector('main');
+const filteredInterview = document.getElementById('filtered-interview');
+const filteredRejected = document.getElementById('filtered-rejected');
