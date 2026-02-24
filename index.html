@@ -3,12 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font style  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <!-- tailwind & daisyUI -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>Job Application Tracker</title>
+  <style>
+    * {
+       font-family: "Geist", sans-serif;
+    }
+  </style>
 </head>
-<body>
-  
+<body class="bg-base-200">
+  <header>
+    <div class="">
+      <div class="navbar w-10/12 mx-auto pt-14">
+        <h2 class="text-3xl font-bold text-[#002C5C] ">Job Application Tracker</h2>
+      </div>
+    </div>
+    <div class="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 my-5">
+    <!-- Div 1 -->
+      <div class="card bg-base-100 text-base-content card-body">
+        <p>Total</p>
+        <h2 id="total-count" class="card-title text-[#002C5C]">0</h2>
+      </div>
+
+    <!-- Div 2 -->
+      <div class="card bg-base-100 text-base-content card-body">
+        <p>Interview</p>
+        <h2 id="interview-count" class="card-title text-[#10B981]">0</h2>
+      </div>
+
+    <!-- Div 3 -->
+      <div class="card bg-base-100 card-body">
+        <p>Rejected</p>
+        <h2 id="rejected-count" class="card-title text-[#EF4444]">0</h2>
+      </div>
+    </div>
+  </header>
+  <hr class="w-10/12 mx-auto border-[#E6E7E9]">
 </body>
 </html>
