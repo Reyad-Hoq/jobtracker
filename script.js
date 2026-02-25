@@ -15,19 +15,26 @@ const filteredRejected = document.getElementById('filtered-rejected');
 
 mainContainer.addEventListener('click', (event) => {
   if(event.target.classList.contains('interviewing-btn')) {
+    const parentNode2 = event.target.parentNode.parentNode.parentNode;
     const parentNode = event.target.parentNode.parentNode;
+    console.log(parentNode2);
     const companyName = parentNode.querySelector(".company-name").innerText;
     const jobType = parentNode.querySelector('.job-type').innerText;
     const joinInfo = parentNode.querySelector(".jon-info").innerText;
     const condition = parentNode.querySelector(".condition").innerText;
     const notes = parentNode.querySelector(".notes").innerText;
-    console.log(companyName, jobType, joinInfo, condition, notes);
+    
     const interviewStyle = parentNode.querySelector('.condition');
+    console.log(interviewStyle)
+    const cardStyle = event.target.closest('.job-details-card');
+
     interviewStyle.innerText = 'INTERVIEWED';
     interviewStyle.classList.add("badge", "badge-soft", "badge-success");
 
+    cardStyle.classList.add("border-success","border-l-4");
+
     let cardInfo = {companyName, jobType, joinInfo, notes, condition:'INTERVIEWED'};
-    console.log(cardInfo.companyName);
+
     const isExist = interviewList.find(item => item.companyName === cardInfo.companyName);
 
     if (!isExist) {
@@ -36,6 +43,35 @@ mainContainer.addEventListener('click', (event) => {
 
     updateCount();
     renderInterview();
+  } else if (event.target.classList.contains('rejected-btn')) {
+    const parentNode = event.target.parentNode.parentNode;
+  
+    const companyName = parentNode.querySelector(".company-name").innerText;
+    const jobType = parentNode.querySelector('.job-type').innerText;
+    const joinInfo = parentNode.querySelector(".jon-info").innerText;
+    const condition = parentNode.querySelector(".condition").innerText;
+    const notes = parentNode.querySelector(".notes").innerText;
+    
+    const rejectStyle = parentNode.querySelector('.condition');
+    
+    const cardStyle = event.target.closest('.job-details-card');
+
+    rejectStyle.innerText = 'REJECTED';
+    rejectStyle.classList.add("badge", "badge-soft", "badge-error");
+
+    cardStyle.classList.add("border-error","border-l-4");
+
+    let cardInfo = {companyName, jobType, joinInfo, notes, condition:'REJECTED'};
+
+    const isExist = rejectedList.find(item => item.companyName === cardInfo.companyName);
+
+    if (!isExist) {
+      rejectedList.push(cardInfo);
+    }
+
+    updateCount();
+    renderInterview();
+    renderRejected()
   }
 });
 

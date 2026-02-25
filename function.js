@@ -73,3 +73,43 @@ function renderInterview() {
     div.querySelector(".condition").classList.add("badge", "badge-soft", "badge-success");
   }
 }
+
+function renderRejected() {
+  filteredRejected.innerHTML = "";
+
+  for(let reject of rejectedList) {
+    console.log(reject);
+    let div = document.createElement('div');
+    div.className = 'bg-base-100 rounded-lg flex justify-between p-5 shadow';
+    // this will be injected in filtered section 
+    div.innerHTML = `
+        <!-- main part 1 -->
+        <div class="space-y-3">
+          <!-- part 1 -->
+          <div>
+            <P class="company-name text-lg text-[#002C5C] font-semibold">${reject.companyName}</P>
+            <P class="job-type text-base-content/50 text-[16px]">${reject.jobType}</P>
+          </div>
+          <!-- part 2 -->
+          <div class="flex gap-3">
+            <P class="jon-info text-base-content/60 text-[14px]">${reject.joinInfo}</P>
+          </div>
+          <!-- part 3 -->
+          <div class="">
+            <P class="condition p-1 text-[14px] "badge", "badge-soft", "badge-success">${reject.condition}</P>
+            <P class="notes mt-2 text-base-content/70 text-[14px]">${reject.notes}</P>
+          </div>
+          <div>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+          </div>
+        </div>
+        <!-- main part 2 -->
+        <div>
+          <button class="btn btn-ghost text-base-content/50"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    `
+    filteredRejected.appendChild(div);
+    div.querySelector(".condition").classList.add("badge", "badge-soft", "badge-error");
+  }
+}
