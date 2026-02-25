@@ -28,19 +28,25 @@
     </div>
     <div class="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 my-5">
     <!-- Div 1 -->
-      <div class="card bg-base-100 shadow card-body">
+      <div class="card bg-base-100 shadow card-body 
+        transition duration-300 ease-in-out
+        hover:shadow-lg hover:-translate-y-1">
         <p>Total</p>
         <h2 id="total-count" class="card-title text-[#002C5C]">0</h2>
       </div>
 
     <!-- Div 2 -->
-      <div class="card bg-base-100 shadow card-body">
+      <div class="card bg-base-100 shadow card-body
+        transition duration-300 ease-in-out
+        hover:shadow-lg hover:-translate-y-1">
         <p>Interview</p>
         <h2 id="interview-count" class="card-title text-[#10B981]">0</h2>
       </div>
 
     <!-- Div 3 -->
-      <div class="card bg-base-100 shadow card-body">
+      <div class="card bg-base-100 shadow card-body
+        transition duration-300 ease-in-out
+        hover:shadow-lg hover:-translate-y-1">
         <p>Rejected</p>
         <h2 id="rejected-count" class="card-title text-[#EF4444]">0</h2>
       </div>
@@ -59,18 +65,18 @@
       <button onclick="toggleStyle('reject-btn')" id="reject-btn" class="btn bg-white ml-2">Rejected</button>
     </div>
     <!-- filtered section  -->
-     <section id="filtered-interview" class="hidden">
+     <section id="filtered-interview" class="hidden my-6">
       <div class="bg-base-100 rounded-lg flex flex-col justify-center items-center p-5 shadow">
-          <div class="w-1/6">
+          <div class="w-1/6 h-1/6">
             <img src="./images/file-lines-regular.png" alt="">
           </div>
         <h2 class="text-2xl">No jobs available</h2>
         <p class="text-md">Check back soon for new job oppurtunities</p>
       </div>
      </section>
-     <section id="filtered-rejected" class="hidden">
+     <section id="filtered-rejected" class="hidden my-6">
       <div class="bg-base-100 rounded-lg flex flex-col justify-center items-center p-5 shadow">
-          <div class="w-1/6">
+          <div class="w-1/6 h-1/6">
             <img src="./images/file-lines-regular.png" alt="">
           </div>
         <h2 class="text-2xl">No jobs available</h2>
@@ -82,7 +88,7 @@
       <!-- card 1 -->
       <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <!-- part 1 -->
           <div>
             <P class="company-name text-lg text-[#002C5C] font-semibold">Mobile First Corp</P>
@@ -98,8 +104,8 @@
             <P class="notes mt-2 text-base-content/70 text-[14px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[16px] btn-sm interviewing-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[16px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->
@@ -110,7 +116,7 @@
       <!-- card 2 -->
       <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <!-- part 1 -->
           <div>
             <P class="company-name text-lg text-[#002C5C] font-semibold">WebFlow Agency</P>
@@ -126,14 +132,12 @@ Part-time
           </div>
           <!-- part 3 -->
           <div class="">
-            <div class="inline-block">
-              <P class="condition p-1 text-[14px]"></P>
-            </div>
+            <P class="condition p-1 text-[14px]"></P>
             <P class="notes mt-2   text-base-content/70 text-[14px]">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[16px] btn-sm interviewing-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[16px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->
@@ -144,7 +148,7 @@ Part-time
       <!-- card 3 -->
       <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <!-- part 1 -->
           <div>
             <P class="company-name text-lg text-[#002C5C] font-semibold">DataViz Solutions</P>
@@ -165,8 +169,8 @@ Part-time
 </P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[16px] btn-sm interviewing-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[16px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->
@@ -177,7 +181,7 @@ Part-time
       <!-- card 4 -->
       <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <!-- part 1 -->
           <div>
             <P class="company-name text-lg text-[#002C5C] font-semibold">CloudFirst Inc</P>
@@ -197,8 +201,8 @@ Part-time
             <P class="notes mt-2   text-base-content/70 text-[14px]">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[16px] btn-sm interviewing-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[16px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->
@@ -209,7 +213,7 @@ Part-time
       <!-- card 5 -->
       <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <!-- part 1 -->
           <div>
             <P class="company-name text-lg text-[#002C5C] font-semibold">Innovation Labs</P>
@@ -229,8 +233,8 @@ Part-time
             <P class="notes mt-2   text-base-content/70 text-[14px]">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[16px] btn-sm interviewing-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[16px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->
@@ -241,7 +245,7 @@ Part-time
       <!-- card 6 -->
       <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <!-- part 1 -->
           <div>
             <P class="company-name text-lg text-[#002C5C] font-semibold">MegaCorp Solutions</P>
@@ -261,8 +265,8 @@ Full-time
             <P class="notes mt-2   text-base-content/70 text-[14px]">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[16px] btn-sm interviewing-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[16px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->
@@ -273,7 +277,7 @@ Full-time
       <!-- card 7 -->
       <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <!-- part 1 -->
           <div>
             <P class="company-name text-lg text-[#002C5C] font-semibold">StartupXYZ</P>
@@ -293,8 +297,8 @@ Full-time
             <P class="notes mt-2   text-base-content/70 text-[14px]">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[16px] btn-sm interviewing-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[16px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->
@@ -305,7 +309,7 @@ Full-time
       <!-- card 8 -->
        <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
         <!-- main part 1 -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <!-- part 1 -->
           <div>
             <P class="company-name text-lg text-[#002C5C] font-semibold">TechCorp Industries</P>
@@ -325,8 +329,8 @@ Full-time
             <P class="notes mt-2   text-base-content/70 text-[14px]">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[16px] btn-sm interviewing-btn">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[16px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->

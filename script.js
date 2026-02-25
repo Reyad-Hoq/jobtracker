@@ -1,5 +1,6 @@
 
 let interviewList = [];
+console.log(interviewList)
 let rejectedList = [];
 
 const totalCount = document.getElementById("total-count");
@@ -13,16 +14,29 @@ const filteredInterview = document.getElementById('filtered-interview');
 const filteredRejected = document.getElementById('filtered-rejected');
 
 mainContainer.addEventListener('click', (event) => {
-  if (event.target.classList.contains('interviewed-btn')) {
+  if(event.target.classList.contains('interviewing-btn')) {
     const parentNode = event.target.parentNode.parentNode;
-    const companyName = document.querySelector(".company-name").innerText;
-    const jobType = document.querySelector(".job-type").innerText;
-    const joinInfo = document.querySelector(".jon-info").innerText;
-    const condition = document.querySelector(".condition").innerText;
-    const notes = document.querySelector(".notes").innerText;
+    const companyName = parentNode.querySelector(".company-name").innerText;
+    const jobType = parentNode.querySelector('.job-type').innerText;
+    const joinInfo = parentNode.querySelector(".jon-info").innerText;
+    const condition = parentNode.querySelector(".condition").innerText;
+    const notes = parentNode.querySelector(".notes").innerText;
+    console.log(companyName, jobType, joinInfo, condition, notes);
     const interviewStyle = parentNode.querySelector('.condition');
     interviewStyle.innerText = 'INTERVIEWED';
-    interviewStyle.classList.add("badge", "badge-soft", "badge-success")
+    interviewStyle.classList.add("badge", "badge-soft", "badge-success");
+
+    let cardInfo = {companyName, jobType, joinInfo, notes, condition:'INTERVIEWED'};
+    console.log(cardInfo.companyName);
+    const isExist = interviewList.find(item => item.companyName === cardInfo.companyName);
+
+    if (!isExist) {
+      interviewList.push(cardInfo);
+    }
+
+    updateCount();
+    renderInterview();
   }
 });
+
     
