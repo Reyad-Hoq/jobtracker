@@ -32,3 +32,43 @@ function toggleStyle (id) {
     filteredRejected.classList.remove('hidden');
   }
 }
+
+function renderInterviewing () {
+  filteredInterview.innerHTML = "";
+
+  for(let interview of interviewList) {
+    console.log(interview);
+    let div = document.createElement('div');
+    div.className = 'border rounded-lg flex justify-between p-5';
+    div.innerHTML = `
+      <div class="bg-base-100 rounded-lg flex justify-between p-5 shadow">
+        <!-- main part 1 -->
+        <div class="space-y-4">
+          <!-- part 1 -->
+          <div>
+            <P class="company-name text-lg text-[#002C5C] font-semibold">${interview.companyName}</P>
+            <P class="job-type text-base-content/50 text-[16px]">${interview.jobType}</P>
+          </div>
+          <!-- part 2 -->
+          <div class="flex gap-3">
+            <P class="jon-info text-base-content/60 text-[14px]">Remote • Full-time • $130,000 - $175,000</P>
+          </div>
+          <!-- part 3 -->
+          <div class="">
+            <P class="condition bg-primary-content inline text-base-content/80 p-1 text-sm rounded-sm">NOT APPLIED</P>
+            <P class="notes mt-2   text-base-content/70 text-[14px]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</P>
+          </div>
+          <div>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm">INTERVIEW</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm">REJECTED</button>
+          </div>
+        </div>
+        <!-- main part 2 -->
+        <div>
+          <button class="btn btn-ghost text-base-content/50"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+      </div>
+    `
+    filteredSectionThrive.appendChild(div);
+  }
+}
