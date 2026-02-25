@@ -60,7 +60,7 @@ function renderInterview() {
             <P class="notes mt-2 text-base-content/70 text-[14px]">${interview.notes}</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewing-btn">INTERVIEW</button>
             <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
@@ -101,7 +101,7 @@ function renderRejected() {
             <P class="notes mt-2 text-base-content/70 text-[14px]">${reject.notes}</P>
           </div>
           <div>
-            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewed-btn">INTERVIEW</button>
+            <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewing-btn">INTERVIEW</button>
             <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>

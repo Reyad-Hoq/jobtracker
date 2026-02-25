@@ -35,7 +35,7 @@ mainContainer.addEventListener('click', (event) => {
     cardStyle.classList.remove("border-error","border-l-4");
     cardStyle.classList.add("border-success","border-l-4");
 
-    let cardInfo = {companyName, jobType, joinInfo, notes, condition:'INTERVIEWED'};
+    const cardInfo = {companyName, jobType, joinInfo, notes, condition:'INTERVIEWED'};
 
     const isExist = interviewList.find(item => item.companyName === cardInfo.companyName);
 
@@ -43,7 +43,7 @@ mainContainer.addEventListener('click', (event) => {
       interviewList.push(cardInfo);
     }
 
-    rejectedList = rejectedList.filter(item => item.companyName !== cardInfo.companyName)
+    rejectedList = rejectedList.filter(item => item.companyName !== cardInfo.companyName);
     updateCount();
     renderInterview();
     renderRejected();
@@ -67,7 +67,7 @@ mainContainer.addEventListener('click', (event) => {
     cardStyle.classList.remove("border-success","border-l-4");
     cardStyle.classList.add("border-error","border-l-4");
 
-    let cardInfo = {companyName, jobType, joinInfo, notes, condition:'REJECTED'};
+    const cardInfo = {companyName, jobType, joinInfo, notes, condition:'REJECTED'};
 
     const isExist = rejectedList.find(item => item.companyName === cardInfo.companyName);
 
@@ -75,10 +75,11 @@ mainContainer.addEventListener('click', (event) => {
       rejectedList.push(cardInfo);
     }
 
-    interviewList = interviewList.filter(item => item.companyName !== cardInfo.companyName)
+    interviewList = interviewList.filter(item => item.companyName !== cardInfo.companyName);
     updateCount();
-    renderRejected()
     renderInterview();
+    renderRejected()
+    
   }
 });
 
