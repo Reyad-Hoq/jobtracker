@@ -29,8 +29,10 @@ mainContainer.addEventListener('click', (event) => {
     const cardStyle = event.target.closest('.job-details-card');
 
     interviewStyle.innerText = 'INTERVIEWED';
+    interviewStyle.classList.remove("badge", "badge-soft", "badge-error");
     interviewStyle.classList.add("badge", "badge-soft", "badge-success");
 
+    cardStyle.classList.remove("border-error","border-l-4");
     cardStyle.classList.add("border-success","border-l-4");
 
     let cardInfo = {companyName, jobType, joinInfo, notes, condition:'INTERVIEWED'};
@@ -41,8 +43,10 @@ mainContainer.addEventListener('click', (event) => {
       interviewList.push(cardInfo);
     }
 
+    rejectedList = rejectedList.filter(item => item.companyName !== cardInfo.companyName)
     updateCount();
     renderInterview();
+    renderRejected();
   } else if (event.target.classList.contains('rejected-btn')) {
     const parentNode = event.target.parentNode.parentNode;
   
@@ -57,8 +61,10 @@ mainContainer.addEventListener('click', (event) => {
     const cardStyle = event.target.closest('.job-details-card');
 
     rejectStyle.innerText = 'REJECTED';
+    rejectStyle.classList.remove("badge", "badge-soft", "badge-success")
     rejectStyle.classList.add("badge", "badge-soft", "badge-error");
 
+    cardStyle.classList.remove("border-success","border-l-4");
     cardStyle.classList.add("border-error","border-l-4");
 
     let cardInfo = {companyName, jobType, joinInfo, notes, condition:'REJECTED'};
@@ -69,9 +75,10 @@ mainContainer.addEventListener('click', (event) => {
       rejectedList.push(cardInfo);
     }
 
+    interviewList = interviewList.filter(item => item.companyName !== cardInfo.companyName)
     updateCount();
-    renderInterview();
     renderRejected()
+    renderInterview();
   }
 });
 

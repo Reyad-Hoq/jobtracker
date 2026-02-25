@@ -56,7 +56,7 @@ function renderInterview() {
           </div>
           <!-- part 3 -->
           <div class="">
-            <P class="condition p-1 text-[14px] "badge", "badge-soft", "badge-success">${interview.condition}</P>
+            <P class="condition p-1 text-[14px]">${interview.condition}</P>
             <P class="notes mt-2 text-base-content/70 text-[14px]">${interview.notes}</P>
           </div>
           <div>
@@ -70,7 +70,8 @@ function renderInterview() {
         </div>
     `
     filteredInterview.appendChild(div);
-    div.querySelector(".condition").classList.add("badge", "badge-soft", "badge-success");
+
+  
   }
 }
 
@@ -110,6 +111,7 @@ function renderRejected() {
         </div>
     `
     filteredRejected.appendChild(div);
-    div.querySelector(".condition").classList.add("badge", "badge-soft", "badge-error");
+
+    
   }
 }
