@@ -74,7 +74,7 @@ function renderInterview() {
 
     const conditionEl = div.querySelector(".condition");
     conditionEl.classList.add("badge", "badge-soft");
-    const cardStyle = document.querySelector('.job-details-card');
+    const cardStyle = div;
 
     if(interview.condition === "INTERVIEWED"){
     conditionEl.classList.add("badge-success");
@@ -85,7 +85,6 @@ function renderInterview() {
     cardStyle.classList.add("border-error","border-l-4");
     }
     // cardStyle.classList.remove("border-error","border-l-4");
-    console.log(div);
   }
 }
 
@@ -127,19 +126,18 @@ function renderRejected() {
     filteredRejected.appendChild(div);
     const conditionEl = div.querySelector(".condition");
     conditionEl.classList.add("badge", "badge-soft");
-    const cardStyle = document.querySelector('.job-details-card');
+    const cardStyle = div;
     
     
+    if(reject.condition === "INTERVIEWED"){
+      
+      conditionEl.classList.add("badge-success");
+      cardStyle.classList.add("border-success","border-l-4");
+    }
     if(reject.condition === "REJECTED"){
     conditionEl.classList.add("badge-error");
     cardStyle.classList.add("border-error","border-l-4");
     }
-    if(reject.condition === "INTERVIEWED"){
-    
-    conditionEl.classList.add("badge-success");
-    cardStyle.classList.add("border-success","border-l-4");
-    }
-    console.log(div);
     // cardStyle.classList.remove("border-success","border-l-4");
     
     // cardStyle.classList.add("border-error","border-l-4");
