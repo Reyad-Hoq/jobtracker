@@ -1,6 +1,5 @@
 
 let interviewList = [];
-console.log(interviewList)
 let rejectedList = [];
 
 const totalCount = document.getElementById("total-count");
@@ -14,10 +13,10 @@ const filteredInterview = document.getElementById('filtered-interview');
 const filteredRejected = document.getElementById('filtered-rejected');
 
 mainContainer.addEventListener('click', (event) => {
+    
   if(event.target.classList.contains('interviewing-btn')) {
-    const parentNode2 = event.target.parentNode.parentNode.parentNode;
     const parentNode = event.target.parentNode.parentNode;
-    console.log(parentNode2);
+
     const companyName = parentNode.querySelector(".company-name").innerText;
     const jobType = parentNode.querySelector('.job-type').innerText;
     const joinInfo = parentNode.querySelector(".jon-info").innerText;
@@ -25,7 +24,7 @@ mainContainer.addEventListener('click', (event) => {
     const notes = parentNode.querySelector(".notes").innerText;
     
     const interviewStyle = parentNode.querySelector('.condition');
-    console.log(interviewStyle)
+
     const cardStyle = event.target.closest('.job-details-card');
 
     interviewStyle.innerText = 'INTERVIEWED';
@@ -48,6 +47,7 @@ mainContainer.addEventListener('click', (event) => {
     renderInterview();
     renderRejected();
   } else if (event.target.classList.contains('rejected-btn')) {
+    
     const parentNode = event.target.parentNode.parentNode;
   
     const companyName = parentNode.querySelector(".company-name").innerText;
@@ -57,7 +57,6 @@ mainContainer.addEventListener('click', (event) => {
     const notes = parentNode.querySelector(".notes").innerText;
     
     const rejectStyle = parentNode.querySelector('.condition');
-    
     const cardStyle = event.target.closest('.job-details-card');
 
     rejectStyle.innerText = 'REJECTED';
@@ -77,8 +76,8 @@ mainContainer.addEventListener('click', (event) => {
 
     interviewList = interviewList.filter(item => item.companyName !== cardInfo.companyName);
     updateCount();
+    renderRejected();
     renderInterview();
-    renderRejected()
     
   }
 });

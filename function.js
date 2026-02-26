@@ -32,15 +32,16 @@ function toggleStyle (id) {
     allcards.classList.add('hidden')
     filteredRejected.classList.remove('hidden');
   }
+  
 }
 
 function renderInterview() {
   filteredInterview.innerHTML = "";
 
   for(let interview of interviewList) {
-    console.log(interview);
+    
     let div = document.createElement('div');
-    div.className = 'bg-base-100 rounded-lg flex justify-between p-5 shadow';
+    div.className = 'bg-base-100 rounded-lg flex justify-between p-5 shadow transition duration-300 ease-in-out hover:shadow-md hover:-translate-y-0.5 job-details-card';
     // this will be injected in filtered section 
     div.innerHTML = `
         <!-- main part 1 -->
@@ -61,7 +62,7 @@ function renderInterview() {
           </div>
           <div>
             <button id="interviewed-btn" class="btn btn-outline btn-success  text-[14px] btn-sm interviewing-btn">INTERVIEW</button>
-            <button id="rejected-btn" class="btn btn-outline btn-error  text-[14px] btn-sm rejected-btn">REJECTED</button>
+            <button id="rejected-btn" class="btn btn-outline btn-error text-[14px] btn-sm rejected-btn">REJECTED</button>
           </div>
         </div>
         <!-- main part 2 -->
@@ -71,7 +72,20 @@ function renderInterview() {
     `
     filteredInterview.appendChild(div);
 
-  
+    const conditionEl = div.querySelector(".condition");
+    conditionEl.classList.add("badge", "badge-soft");
+    const cardStyle = document.querySelector('.job-details-card');
+
+    if(interview.condition === "INTERVIEWED"){
+    conditionEl.classList.add("badge-success");
+    cardStyle.classList.add("border-success","border-l-4");
+    }
+    if(interview.condition === "REJECTED"){
+    conditionEl.classList.add("badge-error");
+    cardStyle.classList.add("border-error","border-l-4");
+    }
+    // cardStyle.classList.remove("border-error","border-l-4");
+    console.log(div);
   }
 }
 
@@ -79,9 +93,9 @@ function renderRejected() {
   filteredRejected.innerHTML = "";
 
   for(let reject of rejectedList) {
-    console.log(reject);
+    
     let div = document.createElement('div');
-    div.className = 'bg-base-100 rounded-lg flex justify-between p-5 shadow';
+    div.className = 'bg-base-100 rounded-lg flex justify-between p-5 shadow transition duration-300 ease-in-out hover:shadow-md hover:-translate-y-0.5 job-details-card';
     // this will be injected in filtered section 
     div.innerHTML = `
         <!-- main part 1 -->
@@ -111,7 +125,23 @@ function renderRejected() {
         </div>
     `
     filteredRejected.appendChild(div);
-
+    const conditionEl = div.querySelector(".condition");
+    conditionEl.classList.add("badge", "badge-soft");
+    const cardStyle = document.querySelector('.job-details-card');
     
+    
+    if(reject.condition === "REJECTED"){
+    conditionEl.classList.add("badge-error");
+    cardStyle.classList.add("border-error","border-l-4");
+    }
+    if(reject.condition === "INTERVIEWED"){
+    
+    conditionEl.classList.add("badge-success");
+    cardStyle.classList.add("border-success","border-l-4");
+    }
+    console.log(div);
+    // cardStyle.classList.remove("border-success","border-l-4");
+    
+    // cardStyle.classList.add("border-error","border-l-4");
   }
 }
